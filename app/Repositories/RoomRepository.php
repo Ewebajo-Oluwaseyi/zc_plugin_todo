@@ -5,9 +5,9 @@ namespace App\Repositories;
 use App\Repositories\Cache\CacheRepository;
 use App\Repositories\HTTP\HTTPRepository;
 
-class TaskRepository
+class RoomRepository
 {
-    protected $modelName = 'DemoTask';
+    protected $modelName = 'DemoTodoRoom';
     protected $httpRepository;
     protected $cacheRepository;
 
