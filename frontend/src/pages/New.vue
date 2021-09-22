@@ -1,7 +1,7 @@
 
 <template>
     <div>
-        
+
         <!-- <transition name="fade">
             <edit-label-modal
                 v-if="showEditModal"
@@ -31,6 +31,7 @@
             <div class="td-px-1">
                 <router-view />
             </div>
+<<<<<<< HEAD:frontend/src/pages/New.vue
             
                 <transition name="fade">
                     <AssignForm 
@@ -41,9 +42,12 @@
             <transition name="fade">
                     <TodoForm v-if="isModal" @toggleModal="toggleModal" />
                 </transition>
+=======
+
+>>>>>>> 975625d623617eb1f5529089fdb547ba035f7e29:resources/js/pages/New.vue
         </div>
-        
-    
+
+
     </div>
 </template>
 <script>
@@ -70,7 +74,11 @@ export default {
     },computed: {
         ...mapGetters({
             allTodos: "todos/allTodos",
+<<<<<<< HEAD:frontend/src/pages/New.vue
             isAssign: 'todos/isAssign'
+=======
+
+>>>>>>> 975625d623617eb1f5529089fdb547ba035f7e29:resources/js/pages/New.vue
         }),
     },
     methods: {

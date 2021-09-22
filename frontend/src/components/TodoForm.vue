@@ -28,8 +28,13 @@
             v-model="todoDetails.dueDate" />
         </div> -->
       <div class="cta-container">
+<<<<<<< HEAD:frontend/src/components/TodoForm.vue
         
         <button class="submit td-bg-green-500 td-py-3 td-px-4 td-rounded td-text-white td-font-bold td-float-right" type="submit">Create task</button>
+=======
+
+        <button class="submit bg-green-500 py-3 px-4 rounded text-white font-bold float-right" type="submit">Create task</button>
+>>>>>>> 975625d623617eb1f5529089fdb547ba035f7e29:resources/js/components/TodoForm.vue
       </div>
     </form>
   </div>
@@ -46,7 +51,7 @@
           token: '',
         todoDetails: {
           title: "",
-          
+
           type: "public",
           description: "",
           labels: [],
@@ -72,14 +77,14 @@
         this.$emit("toggleModal");
       },
       addTodo() {
-          
+
           axios.defaults.headers.common['Authorization'] = `Bearer ${this.token}`;
         this.todoDetails.user_id = this.user.uuid;
         //console.log(this.todoDetails);
         //   function to toggle modal in the main page
         console.log(this.todoDetails)
         this.$emit("toggleModal");
-        //   function to call action in the vuex store 
+        //   function to call action in the vuex store
         this.createTodo(this.todoDetails);
       },
     },
@@ -201,7 +206,15 @@
 //     color: #00b87c;
 //   }
 
+<<<<<<< HEAD:frontend/src/components/TodoForm.vue
   
 
   
+=======
+
+.overlay {
+      background: rgba(0, 0, 0, 0.14901960784313725);
+    }
+
+>>>>>>> 975625d623617eb1f5529089fdb547ba035f7e29:resources/js/components/TodoForm.vue
 </style>
