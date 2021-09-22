@@ -3,7 +3,7 @@
     <CardMenu :links="links" v-show="isModalVisible" @toggleMenu="toggleMenu" />
     <div class="flex justify-between items-center ">
         <h1 class="text-md capitalize font-bold">{{todo.title}}</h1>
-       
+
         <div @click="toggleMenu">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -19,8 +19,8 @@
         </div>
 
       </div>
-      
-     
+      <DeleteMenu v-show="isDeleteModalVisible" :links="deleteLinks"/>
+
     <div class="py-1">
         <h1 class="text-md text-gray-500 ">{{todo.description}}</h1>
       </div>
@@ -81,12 +81,14 @@
 </template>
 <script>
   import CardMenu from "./CardMenu.vue";
+  import DeleteMenu from "./DeleteMenu.vue"
   import {mapActions} from 'vuex'
   export default {
     name: "todo",
     data() {
       return {
         isModalVisible: false,
+        isDeleteModalVisible: false,
         links: [
           {
             name: 'Assign task',
@@ -118,7 +120,7 @@
             action: () => {
               this.archive(this.todo.card_id)
               this.toggleMenu()
-              
+
              // alert('You cant assign tasks now')
             },
             type: 'default'
@@ -126,11 +128,28 @@
           {
             name: 'Delete',
             action: () => {
-              this.delete(this.todo.card_id)
-              this.toggleMenu()
+             // this.delete(this.todo.card_id)
+             // this.toggleMenu()
+             this.deleteToggleMenu();
              // alert('You cant assign tasks now')
             },
             type: 'danger'
+          }
+        ],
+        deleteLinks: [
+          {
+            name: 'Delete' `${todo.title}`,
+            action: () => {
+
+            },
+            type: ''
+          },
+          {
+            name: 'Delete Collaborators',
+            action: () => {
+
+            },
+            type: ''
           }
         ]
       }
@@ -149,13 +168,17 @@
       toggleMenu() {
         this.isModalVisible = !this.isModalVisible;
       },
+      deleteToggleMenu() {
+        this.isDeleteModalVisible = !this.isDeleteModalVisible
+      },
       closeModal() {
         this.isModalVisible = false;
       },
 
     },
     components: {
-      CardMenu
+      CardMenu,
+      DeleteMenu
     },
     props: {
       todo: {

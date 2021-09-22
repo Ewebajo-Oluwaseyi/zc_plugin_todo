@@ -7760,7 +7760,7 @@ function normalizeEmitsOptions(comp, appContext, asMixin = false) {
     let normalized = {};
     // apply mixin/extends props
     let hasExtends = false;
-    if (__VUE_OPTIONS_API__ && !(0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.isFunction)(comp)) {
+    if ( true && !(0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.isFunction)(comp)) {
         const extendEmits = (raw) => {
             const normalizedFromExtend = normalizeEmitsOptions(raw, appContext, true);
             if (normalizedFromExtend) {
@@ -10088,7 +10088,7 @@ function normalizePropsOptions(comp, appContext, asMixin = false) {
     const needCastKeys = [];
     // apply mixin/extends props
     let hasExtends = false;
-    if (__VUE_OPTIONS_API__ && !(0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.isFunction)(comp)) {
+    if ( true && !(0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.isFunction)(comp)) {
         const extendProps = (raw) => {
             hasExtends = true;
             const [props, keys] = normalizePropsOptions(raw, appContext, true);
@@ -10567,7 +10567,7 @@ function createAppAPI(render, hydrate) {
                 return app;
             },
             mixin(mixin) {
-                if (__VUE_OPTIONS_API__) {
+                if (true) {
                     if (!context.mixins.includes(mixin)) {
                         context.mixins.push(mixin);
                     }
@@ -10576,9 +10576,7 @@ function createAppAPI(render, hydrate) {
                             (mixin.name ? `: ${mixin.name}` : ''));
                     }
                 }
-                else if ((true)) {
-                    warn('Mixins are only available in builds supporting Options API');
-                }
+                else {}
                 return app;
             },
             component(name, component) {
@@ -11043,14 +11041,8 @@ function isSupported() {
  */
 function initFeatureFlags() {
     let needWarn = false;
-    if (typeof __VUE_OPTIONS_API__ !== 'boolean') {
-        needWarn = true;
-        (0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.getGlobalThis)().__VUE_OPTIONS_API__ = true;
-    }
-    if (typeof __VUE_PROD_DEVTOOLS__ !== 'boolean') {
-        needWarn = true;
-        (0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.getGlobalThis)().__VUE_PROD_DEVTOOLS__ = false;
-    }
+    if (false) {}
+    if (false) {}
     if (( true) && needWarn) {
         console.warn(`You are running the esm-bundler build of Vue. It is recommended to ` +
             `configure your bundler to explicitly replace feature flag globals ` +
@@ -13346,10 +13338,10 @@ const publicPropertiesMap = (0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.extend)(
     $parent: i => getPublicInstance(i.parent),
     $root: i => getPublicInstance(i.root),
     $emit: i => i.emit,
-    $options: i => (__VUE_OPTIONS_API__ ? resolveMergedOptions(i) : i.type),
+    $options: i => ( true ? resolveMergedOptions(i) : 0),
     $forceUpdate: i => () => queueJob(i.update),
     $nextTick: i => nextTick.bind(i.proxy),
-    $watch: i => (__VUE_OPTIONS_API__ ? instanceWatch.bind(i) : _vue_shared__WEBPACK_IMPORTED_MODULE_1__.NOOP)
+    $watch: i => ( true ? instanceWatch.bind(i) : 0)
 });
 const PublicInstanceProxyHandlers = {
     get({ _: instance }, key) {
@@ -13410,7 +13402,7 @@ const PublicInstanceProxyHandlers = {
                 accessCache[key] = 3 /* CONTEXT */;
                 return ctx[key];
             }
-            else if (!__VUE_OPTIONS_API__ || shouldCacheAccess) {
+            else if ( false || shouldCacheAccess) {
                 accessCache[key] = 4 /* OTHER */;
             }
         }
@@ -13845,7 +13837,7 @@ function finishComponentSetup(instance, isSSR, skipOptions) {
         }
     }
     // support for 2.x options
-    if (__VUE_OPTIONS_API__ && !(false )) {
+    if (true) {
         setCurrentInstance(instance);
         (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_0__.pauseTracking)();
         applyOptions(instance);
@@ -19571,6 +19563,28 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/DeleteMenu.vue?vue&type=script&lang=js":
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/DeleteMenu.vue?vue&type=script&lang=js ***!
+  \****************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: 'modal',
+  props: {
+    deleteLinks: {
+      type: Array
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Empty.vue?vue&type=script&lang=js":
 /*!***********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Empty.vue?vue&type=script&lang=js ***!
@@ -19693,12 +19707,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _CardMenu_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CardMenu.vue */ "./resources/js/components/CardMenu.vue");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var _DeleteMenu_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DeleteMenu.vue */ "./resources/js/components/DeleteMenu.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+var _templateObject;
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
 
 
 
@@ -19709,6 +19729,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
     return {
       isModalVisible: false,
+      isDeleteModalVisible: false,
       links: [{
         name: 'Assign task',
         action: function action() {
@@ -19745,16 +19766,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }, {
         name: 'Delete',
         action: function action() {
-          _this["delete"](_this.todo.card_id);
-
-          _this.toggleMenu(); // alert('You cant assign tasks now')
+          // this.delete(this.todo.card_id)
+          // this.toggleMenu()
+          _this.deleteToggleMenu(); // alert('You cant assign tasks now')
 
         },
         type: 'danger'
+      }],
+      deleteLinks: [{
+        name: 'Delete'(_templateObject || (_templateObject = _taggedTemplateLiteral(["", ""])), todo.title),
+        action: function action() {},
+        type: ''
+      }, {
+        name: 'Delete Collaborators',
+        action: function action() {},
+        type: ''
       }]
     };
   },
-  methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_1__.mapActions)({
+  methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_2__.mapActions)({
     "delete": 'todos/ADD_TRASH',
     archive: 'todos/ADD_ARCHIVE'
   })), {}, {
@@ -19772,12 +19802,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     toggleMenu: function toggleMenu() {
       this.isModalVisible = !this.isModalVisible;
     },
+    deleteToggleMenu: function deleteToggleMenu() {
+      this.isDeleteModalVisible = !this.isDeleteModalVisible;
+    },
     closeModal: function closeModal() {
       this.isModalVisible = false;
     }
   }),
   components: {
-    CardMenu: _CardMenu_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    CardMenu: _CardMenu_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    DeleteMenu: _DeleteMenu_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   props: {
     todo: {
@@ -20362,6 +20396,45 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/DeleteMenu.vue?vue&type=template&id=2571ed56":
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/DeleteMenu.vue?vue&type=template&id=2571ed56 ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "modal shadow-md"
+};
+var _hoisted_2 = {
+  "class": "grid overflow-visible text-sm rounded-md shadow-md modal-items w-44 grid-row-5"
+};
+var _hoisted_3 = {
+  "class": "flex flex-col mt-8 mb-0 items"
+};
+var _hoisted_4 = ["onClink"];
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.deleteLinks, function (link, index) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", {
+      "class": "rounded-sm py-2 px-4 cursor-pointer",
+      key: index,
+      onClink: link.action
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(link.name), 41
+    /* TEXT, PROPS, HYDRATE_EVENTS */
+    , _hoisted_4);
+  }), 128
+  /* KEYED_FRAGMENT */
+  ))])])]);
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Empty.vue?vue&type=template&id=7db38f72&scoped=true":
 /*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Empty.vue?vue&type=template&id=7db38f72&scoped=true ***!
@@ -20820,6 +20893,8 @@ var _hoisted_16 = {
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_CardMenu = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("CardMenu");
 
+  var _component_DeleteMenu = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("DeleteMenu");
+
   var _directive_click_away = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDirective)("click-away");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_CardMenu, {
@@ -20833,7 +20908,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = function () {
       return $options.toggleMenu && $options.toggleMenu.apply($options, arguments);
     })
-  }, _hoisted_5)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.todo.description), 1
+  }, _hoisted_5)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_DeleteMenu, {
+    links: $data.deleteLinks
+  }, null, 8
+  /* PROPS */
+  , ["links"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.isDeleteModalVisible]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.todo.description), 1
   /* TEXT */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.todo.startDate), 1
   /* TEXT */
@@ -21600,7 +21679,7 @@ var _hoisted_2 = {
 };
 var _hoisted_3 = {
   key: 1,
-  "class": "\r\n                         todo_container\r\n sm:grid sm:grid-cols-2\r\ngap-4\r\n md:grid-cols-3\r\n lg:grid-cols-4 \r\n                    "
+  "class": "\r\n                         todo_container\r\n sm:grid sm:grid-cols-2\r\ngap-4\r\n md:grid-cols-3\r\n lg:grid-cols-4\r\n                    "
 };
 var _hoisted_4 = {
   key: 1,
@@ -41588,6 +41667,32 @@ _CardMenu_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"].__
 
 /***/ }),
 
+/***/ "./resources/js/components/DeleteMenu.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/DeleteMenu.vue ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _DeleteMenu_vue_vue_type_template_id_2571ed56__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DeleteMenu.vue?vue&type=template&id=2571ed56 */ "./resources/js/components/DeleteMenu.vue?vue&type=template&id=2571ed56");
+/* harmony import */ var _DeleteMenu_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DeleteMenu.vue?vue&type=script&lang=js */ "./resources/js/components/DeleteMenu.vue?vue&type=script&lang=js");
+
+
+
+_DeleteMenu_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"].render = _DeleteMenu_vue_vue_type_template_id_2571ed56__WEBPACK_IMPORTED_MODULE_0__.render
+/* hot reload */
+if (false) {}
+
+_DeleteMenu_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"].__file = "resources/js/components/DeleteMenu.vue"
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_DeleteMenu_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"]);
+
+/***/ }),
+
 /***/ "./resources/js/components/Empty.vue":
 /*!*******************************************!*\
   !*** ./resources/js/components/Empty.vue ***!
@@ -42031,6 +42136,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/DeleteMenu.vue?vue&type=script&lang=js":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/DeleteMenu.vue?vue&type=script&lang=js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DeleteMenu_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DeleteMenu_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DeleteMenu.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/DeleteMenu.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/components/Empty.vue?vue&type=script&lang=js":
 /*!*******************************************************************!*\
   !*** ./resources/js/components/Empty.vue?vue&type=script&lang=js ***!
@@ -42299,6 +42420,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CardMenu_vue_vue_type_template_id_11d7327a_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_CardMenu_vue_vue_type_template_id_11d7327a_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./CardMenu.vue?vue&type=template&id=11d7327a&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/CardMenu.vue?vue&type=template&id=11d7327a&scoped=true");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/DeleteMenu.vue?vue&type=template&id=2571ed56":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/DeleteMenu.vue?vue&type=template&id=2571ed56 ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DeleteMenu_vue_vue_type_template_id_2571ed56__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DeleteMenu_vue_vue_type_template_id_2571ed56__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DeleteMenu.vue?vue&type=template&id=2571ed56 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/DeleteMenu.vue?vue&type=template&id=2571ed56");
 
 
 /***/ }),
@@ -53772,7 +53909,7 @@ function normalizeEmitsOptions(comp, appContext, asMixin = false) {
     let normalized = {};
     // apply mixin/extends props
     let hasExtends = false;
-    if (__VUE_OPTIONS_API__ && !(0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.isFunction)(comp)) {
+    if ( true && !(0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.isFunction)(comp)) {
         const extendEmits = (raw) => {
             const normalizedFromExtend = normalizeEmitsOptions(raw, appContext, true);
             if (normalizedFromExtend) {
@@ -56100,7 +56237,7 @@ function normalizePropsOptions(comp, appContext, asMixin = false) {
     const needCastKeys = [];
     // apply mixin/extends props
     let hasExtends = false;
-    if (__VUE_OPTIONS_API__ && !(0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.isFunction)(comp)) {
+    if ( true && !(0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.isFunction)(comp)) {
         const extendProps = (raw) => {
             hasExtends = true;
             const [props, keys] = normalizePropsOptions(raw, appContext, true);
@@ -56579,7 +56716,7 @@ function createAppAPI(render, hydrate) {
                 return app;
             },
             mixin(mixin) {
-                if (__VUE_OPTIONS_API__) {
+                if (true) {
                     if (!context.mixins.includes(mixin)) {
                         context.mixins.push(mixin);
                     }
@@ -56588,9 +56725,7 @@ function createAppAPI(render, hydrate) {
                             (mixin.name ? `: ${mixin.name}` : ''));
                     }
                 }
-                else if ((true)) {
-                    warn('Mixins are only available in builds supporting Options API');
-                }
+                else {}
                 return app;
             },
             component(name, component) {
@@ -57055,14 +57190,8 @@ function isSupported() {
  */
 function initFeatureFlags() {
     let needWarn = false;
-    if (typeof __VUE_OPTIONS_API__ !== 'boolean') {
-        needWarn = true;
-        (0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.getGlobalThis)().__VUE_OPTIONS_API__ = true;
-    }
-    if (typeof __VUE_PROD_DEVTOOLS__ !== 'boolean') {
-        needWarn = true;
-        (0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.getGlobalThis)().__VUE_PROD_DEVTOOLS__ = false;
-    }
+    if (false) {}
+    if (false) {}
     if (( true) && needWarn) {
         console.warn(`You are running the esm-bundler build of Vue. It is recommended to ` +
             `configure your bundler to explicitly replace feature flag globals ` +
@@ -59358,10 +59487,10 @@ const publicPropertiesMap = (0,_vue_shared__WEBPACK_IMPORTED_MODULE_1__.extend)(
     $parent: i => getPublicInstance(i.parent),
     $root: i => getPublicInstance(i.root),
     $emit: i => i.emit,
-    $options: i => (__VUE_OPTIONS_API__ ? resolveMergedOptions(i) : i.type),
+    $options: i => ( true ? resolveMergedOptions(i) : 0),
     $forceUpdate: i => () => queueJob(i.update),
     $nextTick: i => nextTick.bind(i.proxy),
-    $watch: i => (__VUE_OPTIONS_API__ ? instanceWatch.bind(i) : _vue_shared__WEBPACK_IMPORTED_MODULE_1__.NOOP)
+    $watch: i => ( true ? instanceWatch.bind(i) : 0)
 });
 const PublicInstanceProxyHandlers = {
     get({ _: instance }, key) {
@@ -59422,7 +59551,7 @@ const PublicInstanceProxyHandlers = {
                 accessCache[key] = 3 /* CONTEXT */;
                 return ctx[key];
             }
-            else if (!__VUE_OPTIONS_API__ || shouldCacheAccess) {
+            else if ( false || shouldCacheAccess) {
                 accessCache[key] = 4 /* OTHER */;
             }
         }
@@ -59857,7 +59986,7 @@ function finishComponentSetup(instance, isSSR, skipOptions) {
         }
     }
     // support for 2.x options
-    if (__VUE_OPTIONS_API__ && !(false )) {
+    if (true) {
         setCurrentInstance(instance);
         (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_0__.pauseTracking)();
         applyOptions(instance);
