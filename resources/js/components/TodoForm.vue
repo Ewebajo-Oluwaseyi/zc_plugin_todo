@@ -37,7 +37,7 @@
             v-model="todoDetails.dueDate" />
         </div> -->
       <div class="cta-container">
-        
+
         <button class="submit bg-green-500 py-3 px-4 rounded text-white font-bold float-right" type="submit">Create task</button>
       </div>
     </form>
@@ -55,7 +55,7 @@
           token: '',
         todoDetails: {
           title: "",
-          
+
           type: "public",
           description: "",
           labels: [],
@@ -78,14 +78,14 @@
         this.$emit("toggleModal");
       },
       addTodo() {
-          
+
           axios.defaults.headers.common['Authorization'] = `Bearer ${this.token}`;
         this.todoDetails.user_id = this.user.uuid;
         //console.log(this.todoDetails);
         //   function to toggle modal in the main page
         console.log(this.todoDetails)
         this.$emit("toggleModal");
-        //   function to call action in the vuex store 
+        //   function to call action in the vuex store
         this.createTodo(this.todoDetails);
       },
     },
@@ -202,9 +202,9 @@
 //     color: #00b87c;
 //   }
 
-  
+
 .overlay {
       background: rgba(0, 0, 0, 0.14901960784313725);
     }
-  
+
 </style>

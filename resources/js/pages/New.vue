@@ -1,6 +1,6 @@
 <template>
     <div>
-        
+
         <!-- <transition name="fade">
             <edit-label-modal
                 v-if="showEditModal"
@@ -36,10 +36,10 @@
             <div class="px-1">
                 <router-view />
             </div>
-            
+
         </div>
-        
-    
+
+
     </div>
 </template>
 <script>
@@ -64,7 +64,7 @@ export default {
     },computed: {
         ...mapGetters({
             allTodos: "todos/allTodos",
-            
+
         }),
     },
     methods: {
