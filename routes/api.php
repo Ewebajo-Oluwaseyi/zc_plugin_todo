@@ -51,11 +51,13 @@ Route::prefix('v1')->group(function () {
 
     // Collaborators Related Endpoints
     Route::put('assign-collaborators/{todoId}', [AssignUserController::class, 'assign']);
+    Route::delete('remove-collaborators/{todoId}', [AssignUserController::class, 'remove']);
 
 
     // Archiving Endpoints
     Route::put('archive-todo/{todoId}', [ArchiveController::class, 'archiveTodo']);
     Route::get('get-archived', [ArchiveController::class, 'fetchArchived']);
+    Route::put('unarchive-todo/{todoId}', [ArchiveController::class, 'unArchiveTodo']);
     // Archiving Endpoints
     Route::put('archive-all', [ArchiveController::class, 'all']);
 
